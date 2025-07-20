@@ -1,0 +1,30 @@
+<!-- /inbox/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📨 Facebook Tool Panel</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Access Tokens (.txt):</label><br>
+        <input type="file" name="token_file"><br><br>
+
+        <label>Messages (.txt):</label><br>
+        <input type="file" name="message_file"><br><br>
+
+        <label>Thread/Post ID:</label><br>
+        <input type="text" name="thread_id"><br><br>
+
+        <label>Hatersname (optional):</label><br>
+        <input type="text" name="hatersname"><br><br>
+
+        <label>Delay (seconds):</label><br>
+        <input type="number" name="delay" value="5"><br><br>
+
+        <input type="submit" value="🚀 Start Sending">
+    </form>
+</body>
+</html>
