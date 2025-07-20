@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Success</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body onload="celebrate()">
+  <h1 style="text-align:center;">🎉 Congratulations! 🎉</h1>
+  <div style="text-align:center;">
+    <a href="/logs">View Log Console</a> |
+    <a href="/">Start Again</a>
+  </div>
+  <script>
+    function celebrate() {
+      confetti({ particleCount: 200, spread: 70 });
+    }
+  </script>
+</body>
+</html>
