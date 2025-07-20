@@ -1,26 +1,100 @@
-<h1>📩 Facebook Tool Panel</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facebook Tool Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .form-section {
+            display: none;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            padding: 5px;
+            width: 250px;
+        }
+        input[type="file"] {
+            padding: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showForm() {
+            var mode = document.getElementById("mode").value;
+            if (mode) {
+                document.getElementById("mainForm").style.display = "block";
+                document.getElementById("threadField").style.display = (mode === "convo") ? "block" : "none";
+                document.getElementById("postField").style.display = (mode === "post") ? "block" : "none";
+            } else {
+                document.getElementById("mainForm").style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
 
-<form method="POST" enctype="multipart/form-data">
-    <label>Choose Mode:</label>
-    <select name="mode" required>
-        <option value="convo">💬 Convo (Send Message)</option>
-        <option value="post">📝 Post (Comment)</option>
+    <h2>📢 Choose Mode</h2>
+    <select id="mode" name="mode" onchange="showForm()" required>
+        <option value="">-- Select --</option>
+        <option value="convo">Chat (Convo)</option>
+        <option value="post">Post (Comment)</option>
     </select>
 
-    <label>Access Tokens (.txt):</label>
-    <input type="file" name="tokens_file" accept=".txt" required>
+    <form id="mainForm" class="form-section" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="mode" id="selectedMode">
 
-    <label>Messages (.txt):</label>
-    <input type="file" name="messages_file" accept=".txt" required>
+        <div class="form-group">
+            <label>Choose Tokens (.txt):</label>
+            <input type="file" name="tokens_file" required>
+        </div>
 
-    <label>Thread/Post ID:</label>
-    <input type="text" name="target_id" required>
+        <div class="form-group">
+            <label>Choose Messages (.txt):</label>
+            <input type="file" name="messages_file" required>
+        </div>
 
-    <label>Hatersname (optional):</label>
-    <input type="text" name="hatersname">
+        <div class="form-group" id="threadField" style="display:none;">
+            <label>Enter Thread ID:</label>
+            <input type="text" name="target_id">
+        </div>
 
-    <label>Delay (seconds):</label>
-    <input type="number" name="delay" value="5">
+        <div class="form-group" id="postField" style="display:none;">
+            <label>Enter Post ID:</label>
+            <input type="text" name="target_id">
+        </div>
 
-    <input type="submit" value="🚀 Start Sending">
-</form>
+        <div class="form-group">
+            <label>Enter Hatersname (optional):</label>
+            <input type="text" name="hatersname">
+        </div>
+
+        <div class="form-group">
+            <label>Enter Delay (seconds):</label>
+            <input type="number" name="delay" value="5" required>
+        </div>
+
+        <button type="submit">🚀 Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("mode").addEventListener("change", function() {
+            document.getElementById("selectedMode").value = this.value;
+        });
+    </script>
+
+</body>
+</html>
