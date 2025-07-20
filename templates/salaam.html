@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Salaam</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+    .center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-family: sans-serif;
+    }
+    .smoke {
+      position: fixed;
+      width: 100%; height: 100%;
+      background: url("https://i.ibb.co/t2jfzb2/smoke.gif") center/cover no-repeat;
+      opacity: 0;
+      animation: fadein 3s ease-in forwards 2s;
+    }
+    @keyframes fadein {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body onload="start()">
+  <div class="center">
+    <img src="{{ url_for('static', filename='muslim.png') }}" width="200"><br>
+    <h1>Salaam Alaikum</h1>
+    <audio id="salaam" autoplay>
+      <source src="{{ url_for('static', filename='salaam.mp3') }}" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="smoke"></div>
+  <script>
+    function start() {
+      setTimeout(() => { window.location.href = "/token_type"; }, 5000);
+    }
+  </script>
+</body>
+</html>
