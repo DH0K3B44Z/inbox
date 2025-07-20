@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post Inputs</title>
+</head>
+<body>
+  <form action="/submit_post" method="post" enctype="multipart/form-data">
+    <p><input type="file" name="token_file" required></p>
+    <p><input type="file" name="comment_file" required></p>
+    <p><input type="text" name="post_id" placeholder="12345_6789" required></p>
+    <p><input type="text" name="haters_name" placeholder="Enter Hater's Name" required></p>
+    <p><input type="text" name="user_name" placeholder="Your Name" required></p>
+    <p><input type="number" name="interval" placeholder="Time Interval (sec)" required></p>
+    <p><button>Submit</button></p>
+  </form>
+</body>
+</html>
