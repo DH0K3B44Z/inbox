@@ -1,30 +1,26 @@
-<!-- /inbox/templates/index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Facebook Tool</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <h1>📨 Facebook Tool Panel</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <label>Access Tokens (.txt):</label><br>
-        <input type="file" name="token_file"><br><br>
+<h1>📩 Facebook Tool Panel</h1>
 
-        <label>Messages (.txt):</label><br>
-        <input type="file" name="message_file"><br><br>
+<form method="POST" enctype="multipart/form-data">
+    <label>Choose Mode:</label>
+    <select name="mode" required>
+        <option value="convo">💬 Convo (Send Message)</option>
+        <option value="post">📝 Post (Comment)</option>
+    </select>
 
-        <label>Thread/Post ID:</label><br>
-        <input type="text" name="thread_id"><br><br>
+    <label>Access Tokens (.txt):</label>
+    <input type="file" name="tokens_file" accept=".txt" required>
 
-        <label>Hatersname (optional):</label><br>
-        <input type="text" name="hatersname"><br><br>
+    <label>Messages (.txt):</label>
+    <input type="file" name="messages_file" accept=".txt" required>
 
-        <label>Delay (seconds):</label><br>
-        <input type="number" name="delay" value="5"><br><br>
+    <label>Thread/Post ID:</label>
+    <input type="text" name="target_id" required>
 
-        <input type="submit" value="🚀 Start Sending">
-    </form>
-</body>
-</html>
+    <label>Hatersname (optional):</label>
+    <input type="text" name="hatersname">
+
+    <label>Delay (seconds):</label>
+    <input type="number" name="delay" value="5">
+
+    <input type="submit" value="🚀 Start Sending">
+</form>
