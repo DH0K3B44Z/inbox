@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server Type</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      margin-top: 100px;
+      font-family: fantasy;
+    }
+    button {
+      padding: 20px;
+      margin: 20px;
+      font-size: 24px;
+      background: #111;
+      color: lime;
+      border: 2px solid lime;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form action="/convo_form" method="post">
+    <button>Convo Server</button>
+  </form>
+  <form action="/post_form" method="post">
+    <button>Post Server</button>
+  </form>
+  <audio autoplay>
+    <source src="{{ url_for('static', filename='welcome.mp3') }}" type="audio/mpeg">
+  </audio>
+</body>
+</html>
