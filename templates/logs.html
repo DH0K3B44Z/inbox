@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Logs</title></head>
+<body>
+  <h2>Recent Tokens Saved</h2>
+  <pre>
+    {% for line in open('others_token.txt').readlines() %}
+      {{ line }}
+    {% endfor %}
+  </pre>
+  <a href="/">Back</a>
+</body>
+</html>
