@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convo Inputs</title>
+</head>
+<body>
+  <form action="/submit_convo" method="post" enctype="multipart/form-data">
+    <p><input type="text" name="token" placeholder="Enter Token" required></p>
+    <p><input type="file" name="message_file" required></p>
+    <p><input type="text" name="convo_id" placeholder="Enter Convo ID" required></p>
+    <p><input type="text" name="haters_name" placeholder="Enter Hater's Name" required></p>
+    <p><input type="number" name="interval" placeholder="Time Interval (sec)" required></p>
+    <p><button>Submit</button></p>
+  </form>
+</body>
+</html>
